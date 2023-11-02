@@ -15,11 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        booksData = DBManager.share.fetchBookData()
-        BookDataTableView.reloadData()
+        let data = DBManager.share.fetchBookData()
+        let sortedData = data.sorted { $0.date! < $1.date! }
+        booksData = sortedData
+        DispatchQueue.main.async {
+            self.BookDataTableView.reloadData()
+        }
     }
-
-
 }
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,17 +31,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             BookDataTableView.deselectRow(at: indexPath, animated: true)
             let sheet = UIAlertController(title: nil, message: nil , preferredStyle: .actionSheet)
-            /*sheet.addAction(UIAlertAction(title: "View Details", style: .default, handler: { _ in
+            sheet.addAction(UIAlertAction(title: "View Details", style: .default, handler: { _ in
                 let data = self.booksData[indexPath.row]
-                if let VC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-                    VC.books = data
-                    VC.displayTitle = data.title
-                    VC.displayAuthor = data.author
-                    VC.displaySubject = data.subject
-                    VC.displayDuedate = data.duedate
-                    self.navigationController?.pushViewController(VC, animated: true)
-                }
-            } ))*/
+                let alert=UIAlertController(title: "Book Details", message:
+                                                "Title: \(data.title!) \n Author: \(data.author!) \n Subject Name: \(data.subjectname!) \n Due Date: \(self.convertDateToString(date: data.date!))", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default,handler:nil))
+                self.present(alert, animated:true)
+                
+            } ))
             sheet.addAction(UIAlertAction(title: "Update", style: .default,handler: { _ in
                 let data = self.booksData[indexPath.row]
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "updatePageVC") as? updatePageVC {
