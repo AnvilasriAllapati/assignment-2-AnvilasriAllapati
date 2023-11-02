@@ -27,14 +27,49 @@ class AddBookVC: UIViewController {
     //@IBOutlet weak var subjectname: UITextField!
     //@IBOutlet weak var duedate: UITextField!
     
+    
     @IBAction func onClickAdd(_ sender: Any) {
-        if let titlename = titlename.text, let author = author.text, let subjectname = subjectname.text{
+        guard let title = titlename.text, !title.isEmpty,
+              let author = author.text, !author.isEmpty,
+              let subject = subjectname.text, !subject.isEmpty,
+              let dueDateText = date.text, !dueDateText.isEmpty
+        else {
+            self.dismiss(animated: true)
+                            {
+                                let alert=UIAlertController(title: "Error!", message: "Please fill in all fields", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default,handler:nil))
+                                self.present(alert, animated:true)
+                            }
+            return }
+        
+        guard let dueDate = convertToDate(dateString: dueDateText) else {
+            self.dismiss(animated: true)
+                            {
+                                let alert=UIAlertController(title: "Error!", message: "Invalid date format, Please use MMM d, yyyy format eg. Aug 1, 2024", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default,handler:nil))
+                                self.present(alert, animated:true)
+                            }
+                    //showAlert(message: "Invalid date format. Please use MMM d, yyyy format eg. Aug 1, 2024")
+                    return
+                }
             let newBook = BookData(context:  DBManager.share.context)
-            newBook.title = titlename
+            newBook.title = title
             newBook.author = author
-            newBook.subjectname = subjectname
+            newBook.subjectname = subject
+            newBook.date = dueDate
             DBManager.share.saveContext()
+        navigationController?.popViewController(animated: true)
         }
+    func convertToDate(dateString: String) -> Date? {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "MMM d, yyyy"
+           
+           if let date = dateFormatter.date(from: dateString) {
+               return date
+           } else {
+               return nil
+           }
+       }
     }
     
     
@@ -49,4 +84,4 @@ class AddBookVC: UIViewController {
     }
     */
 
-}
+

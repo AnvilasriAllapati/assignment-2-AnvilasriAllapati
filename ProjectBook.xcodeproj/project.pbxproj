@@ -18,6 +18,7 @@
 		41AD55A42AF2C227003B9284 /* BookData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD55A22AF2C227003B9284 /* BookData+CoreDataClass.swift */; };
 		41AD55A52AF2C227003B9284 /* BookData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD55A32AF2C227003B9284 /* BookData+CoreDataProperties.swift */; };
 		41AD55A72AF2C303003B9284 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD55A62AF2C303003B9284 /* DBManager.swift */; };
+		41AD55AB2AF32211003B9284 /* updatePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD55AA2AF32211003B9284 /* updatePageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		41AD55A22AF2C227003B9284 /* BookData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		41AD55A32AF2C227003B9284 /* BookData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		41AD55A62AF2C303003B9284 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		41AD55AA2AF32211003B9284 /* updatePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updatePageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				41AD55982AF20850003B9284 /* Info.plist */,
 				41AD55902AF2084F003B9284 /* ProjectBook.xcdatamodeld */,
 				41AD55A62AF2C303003B9284 /* DBManager.swift */,
+				41AD55AA2AF32211003B9284 /* updatePageVC.swift */,
 			);
 			path = ProjectBook;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				41AD55882AF2084F003B9284 /* AppDelegate.swift in Sources */,
 				41AD55922AF2084F003B9284 /* ProjectBook.xcdatamodeld in Sources */,
 				41AD558A2AF2084F003B9284 /* SceneDelegate.swift in Sources */,
+				41AD55AB2AF32211003B9284 /* updatePageVC.swift in Sources */,
 				41AD55A12AF212AF003B9284 /* AddBookVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

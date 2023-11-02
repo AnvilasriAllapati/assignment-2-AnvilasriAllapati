@@ -1,0 +1,33 @@
+
+/* Class = "UITextField"; placeholder = "author"; ObjectID = "13h-HI-X2T"; */
+"13h-HI-X2T.placeholder" = "author";
+
+/* Class = "UITextField"; placeholder = "subject name"; ObjectID = "6Nn-pq-xh6"; */
+"6Nn-pq-xh6.placeholder" = "subject name";
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "LaN-cZ-DoD"; */
+"LaN-cZ-DoD.configuration.title" = "Add";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LaN-cZ-DoD"; */
+"LaN-cZ-DoD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "NqI-vu-QFV"; */
+"NqI-vu-QFV.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Add books details"; ObjectID = "RNB-if-auS"; */
+"RNB-if-auS.title" = "Add books details";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "UxD-Ug-iby"; */
+"UxD-Ug-iby.text" = "Detail";
+
+/* Class = "UIViewController"; title = "AddBookVC"; ObjectID = "Zjg-H3-aLu"; */
+"Zjg-H3-aLu.title" = "AddBookVC";
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "hyL-oM-ZZF"; */
+"hyL-oM-ZZF.placeholder" = "Title";
+
+/* Class = "UINavigationItem"; title = "BooksList"; ObjectID = "oJq-Yb-LV0"; */
+"oJq-Yb-LV0.title" = "BooksList";
+
+/* Class = "UITextField"; placeholder = "Due date"; ObjectID = "zuC-wS-nY0"; */
+"zuC-wS-nY0.placeholder" = "Due date";
